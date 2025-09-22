@@ -72,7 +72,7 @@ La aplicación incluye varios casos predefinidos para el análisis de intervalos
 
 - **Case 1**: Análisis de intervalos específicos (6ªm/6ªM → 8ª)
 - **Case 2**: Análisis de terceras mayores a quintas perfectas
-- **Case 3**: Análisis personalizado de voice leading
+- **Case 3**: Análisis de tercera menor a unísono
 
 ## Contribuir
 
