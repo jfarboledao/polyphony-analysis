@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Archivos Musicales - KERN & MusicXML</title>
+    <meta name="description" content="Aplicación Python para análisis musical de archivos KERN y MusicXML con voice leading y conteo de intervalos">
+    <meta name="keywords" content="música, análisis musical, KERN, MusicXML, voice leading, intervalos, Python">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-music"></i>
+                    <span>Music Analyzer</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Inicio</a></li>
+                    <li><a href="#features" class="nav-link">Características</a></li>
+                    <li><a href="#functionality" class="nav-link">Funcionalidades</a></li>
+                    <li><a href="#demo" class="nav-link">Demo</a></li>
+                    <li><a href="#installation" class="nav-link">Instalación</a></li>
+                    <li><a href="#github" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Analizador de Archivos Musicales
+                    <span class="gradient-text">KERN & MusicXML</span>
+                </h1>
+                <p class="hero-description">
+                    Una aplicación Python avanzada para el análisis musical profundo de archivos KERN y MusicXML, 
+                    especializada en voice leading, conteo de intervalos y análisis polifónico.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        Comenzar Ahora
+                    </a>
+                    <a href="#demo" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Ver Demo
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Formatos Musicales</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Casos de Análisis</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">MongoDB</span>
+                        <span class="stat-label">Base de Datos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="music-notation">
+                    <div class="staff-lines">
+                        <div class="staff-line"></div>
+                        <div class="staff-line"></div>
+                        <div class="staff-line"></div>
+                        <div class="staff-line"></div>
+                        <div class="staff-line"></div>
+                    </div>
+                    <div class="notes">
+                        <div class="note note-1">♪</div>
+                        <div class="note note-2">♫</div>
+                        <div class="note note-3">♪</div>
+                        <div class="note note-4">♬</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Características -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Características Principales</h2>
+                <p>Herramientas avanzadas para el análisis musical computacional</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-audio"></i>
+                    </div>
+                    <h3>Múltiples Formatos</h3>
+                    <p>Soporte completo para archivos KERN (.krn) y MusicXML (.musicxml) con análisis automático de metadatos</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Base de Datos MongoDB</h3>
+                    <p>Almacenamiento en la nube con MongoDB Atlas para gestión eficiente de datos musicales y metadatos</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Voice Leading Analysis</h3>
+                    <p>Análisis avanzado de conducción de voces con Voice Leading Quartets y detección de movimiento contrario</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Conteo de Intervalos</h3>
+                    <p>Análisis automático de intervalos melódicos y armónicos con casos predefinidos y personalizables</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Interfaz Gráfica</h3>
+                    <p>Aplicación de escritorio intuitiva desarrollada con Tkinter para facilidad de uso</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Procesamiento Masivo</h3>
+                    <p>Análisis automático de múltiples archivos (Big Data) con resultados detallados y exportables</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Funcionalidades -->
+    <section id="functionality" class="functionality">
+        <div class="container">
+            <div class="section-header">
+                <h2>Funcionalidades Detalladas</h2>
+                <p>Explore las capacidades completas del analizador musical</p>
+            </div>
+            
+            <div class="functionality-tabs">
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="database">Gestión de Datos</button>
+                    <button class="tab-btn" data-tab="analysis">Análisis Musical</button>
+                    <button class="tab-btn" data-tab="visualization">Visualización</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="database" class="tab-pane active">
+                        <div class="functionality-content">
+                            <div class="func-text">
+                                <h3>Gestión Completa de Datos Musicales</h3>
+                                <ul>
+                                    <li><strong>Inserción Automática:</strong> Carga masiva de archivos KERN y MusicXML con extracción automática de metadatos</li>
+                                    <li><strong>Visualización Inteligente:</strong> Tablas interactivas con filtros personalizables por autor, título, formato y más</li>
+                                    <li><strong>Eliminación Selectiva:</strong> Borrado seguro por tipo de archivo con confirmación</li>
+                                    <li><strong>Hash Verification:</strong> Verificación de integridad de archivos mediante hashing MD5</li>
+                                    <li><strong>Integración MuseScore:</strong> Apertura directa de partituras en MuseScore para visualización</li>
+                                </ul>
+                            </div>
+                            <div class="func-visual">
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>gestión_datos.py</span>
+                                        <i class="fas fa-copy"></i>
+                                    </div>
+                                    <pre><code># Inserción automática de datos
+def insertar_datos():
+    analizarKern.llamarTabla()
+
+# Visualización con filtros
+def visualizar_datos():
+    analizarKern.visualizarDatos()
+
+# Eliminación por tipo
+def eliminar_datos():
+    analizarKern.eliminarDatos(tipo)</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="analysis" class="tab-pane">
+                        <div class="functionality-content">
+                            <div class="func-text">
+                                <h3>Análisis Musical Avanzado</h3>
+                                <ul>
+                                    <li><strong>Case 1:</strong> Análisis de sextas menores/mayores → octavas (6ªm/6ªM → 8ª)</li>
+                                    <li><strong>Case 2:</strong> Análisis de terceras mayores → quintas perfectas (3ªM → 5ªJ)</li>
+                                    <li><strong>Case 3:</strong> Análisis personalizado de voice leading</li>
+                                    <li><strong>Voice Leading Quartets:</strong> Detección de movimiento contrario interno</li>
+                                    <li><strong>Beat Strength Analysis:</strong> Análisis de fuerza métrica de las notas</li>
+                                </ul>
+                            </div>
+                            <div class="func-visual">
+                                <div class="analysis-demo">
+                                    <h4>Ejemplo de Análisis</h4>
+                                    <div class="interval-analysis">
+                                        <div class="interval-case">
+                                            <span class="case-label">Case 1:</span>
+                                            <span class="notes">G4 → F♭4 | E5 → F♭5</span>
+                                            <span class="result">✓ Válido</span>
+                                        </div>
+                                        <div class="interval-case">
+                                            <span class="case-label">Case 2:</span>
+                                            <span class="notes">G4 → F♭4 | B4 → C♭5</span>
+                                            <span class="result">✓ Válido</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="visualization" class="tab-pane">
+                        <div class="functionality-content">
+                            <div class="func-text">
+                                <h3>Visualización y Reportes</h3>
+                                <ul>
+                                    <li><strong>Tablas Interactivas:</strong> Visualización de datos con ordenamiento y filtrado dinámico</li>
+                                    <li><strong>Resultados de Análisis:</strong> Reportes detallados de conteo de intervalos</li>
+                                    <li><strong>Integración MuseScore:</strong> Visualización directa de partituras</li>
+                                    <li><strong>Exportación de Datos:</strong> Resultados exportables para análisis posterior</li>
+                                    <li><strong>Big Data Results:</strong> Procesamiento y visualización de análisis masivos</li>
+                                </ul>
+                            </div>
+                            <div class="func-visual">
+                                <div class="visualization-demo">
+                                    <div class="chart-container">
+                                        <div class="chart-header">Resultados de Análisis</div>
+                                        <div class="chart-bars">
+                                            <div class="chart-bar">
+                                                <span class="bar-label">Case 1</span>
+                                                <div class="bar" style="width: 75%"></div>
+                                                <span class="bar-value">24</span>
+                                            </div>
+                                            <div class="chart-bar">
+                                                <span class="bar-label">Case 2</span>
+                                                <div class="bar" style="width: 45%"></div>
+                                                <span class="bar-value">14</span>
+                                            </div>
+                                            <div class="chart-bar">
+                                                <span class="bar-label">Case 3</span>
+                                                <div class="bar" style="width: 60%"></div>
+                                                <span class="bar-value">19</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Demo -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Demostración del Sistema</h2>
+                <p>Vea cómo funciona el analizador en acción</p>
+            </div>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>Interfaz Principal</h3>
+                        <span class="demo-tag">GUI</span>
+                    </div>
+                    <div class="demo-content">
+                        <div class="interface-mockup">
+                            <div class="window-header">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <span class="window-title">Base de datos de análisis de Kern</span>
+                            </div>
+                            <div class="window-content">
+                                <div class="button-list">
+                                    <div class="gui-button">Insertar datos</div>
+                                    <div class="gui-button">Visualizar datos</div>
+                                    <div class="gui-button">Eliminar datos</div>
+                                    <div class="gui-button">Contar intervalos (casos)</div>
+                                    <div class="gui-button">Contar intervalos (Big data)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>Análisis de Archivos</h3>
+                        <span class="demo-tag">Automático</span>
+                    </div>
+                    <div class="demo-content">
+                        <div class="file-analysis">
+                            <div class="file-item">
+                                <i class="fas fa-file-audio"></i>
+                                <span>Bach_BWV-269.krn</span>
+                                <span class="status processing">Procesando...</span>
+                            </div>
+                            <div class="file-item">
+                                <i class="fas fa-file-code"></i>
+                                <span>Beethoven_Op67.musicxml</span>
+                                <span class="status completed">Completado</span>
+                            </div>
+                            <div class="file-item">
+                                <i class="fas fa-file-audio"></i>
+                                <span>Landini_Primavera.krn</span>
+                                <span class="status completed">Completado</span>
+                            </div>
+                        </div>
+                        <div class="analysis-results">
+                            <div class="result-item">
+                                <span>Notas analizadas:</span>
+                                <strong>1,247</strong>
+                            </div>
+                            <div class="result-item">
+                                <span>Intervalos encontrados:</span>
+                                <strong>342</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>Resultados de Voice Leading</h3>
+                        <span class="demo-tag">Análisis</span>
+                    </div>
+                    <div class="demo-content">
+                        <div class="voice-leading-results">
+                            <div class="vlq-item">
+                                <div class="vlq-notes">
+                                    <span class="note-pair">G4 → F♭4</span>
+                                    <span class="note-pair">E5 → F♭5</span>
+                                </div>
+                                <span class="vlq-type">Contrary Motion</span>
+                                <span class="vlq-result valid">✓</span>
+                            </div>
+                            <div class="vlq-item">
+                                <div class="vlq-notes">
+                                    <span class="note-pair">C4 → D4</span>
+                                    <span class="note-pair">A4 → B4</span>
+                                </div>
+                                <span class="vlq-type">Parallel Motion</span>
+                                <span class="vlq-result invalid">✗</span>
+                            </div>
+                            <div class="vlq-item">
+                                <div class="vlq-notes">
+                                    <span class="note-pair">F4 → E4</span>
+                                    <span class="note-pair">D5 → C5</span>
+                                </div>
+                                <span class="vlq-type">Similar Motion</span>
+                                <span class="vlq-result valid">✓</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Instalación -->
+    <section id="installation" class="installation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Instalación y Configuración</h2>
+                <p>Comience a usar el analizador en minutos</p>
+            </div>
+            
+            <div class="installation-content">
+                <div class="requirements">
+                    <h3>Requisitos del Sistema</h3>
+                    <div class="req-grid">
+                        <div class="req-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python 3.8+</span>
+                        </div>
+                        <div class="req-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>MongoDB Atlas</span>
+                        </div>
+                        <div class="req-item">
+                            <i class="fas fa-music"></i>
+                            <span>MuseScore 4</span>
+                        </div>
+                        <div class="req-item">
+                            <i class="fas fa-desktop"></i>
+                            <span>Tkinter</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="installation-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Clonar el Repositorio</h4>
+                            <div class="code-block">
+                                <pre><code>git clone https://github.com/usuario/music-analyzer.git
+cd music-analyzer</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Instalar Dependencias</h4>
+                            <div class="code-block">
+                                <pre><code>pip install music21 pymongo
+pip install -r requirements.txt</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Configurar MuseScore</h4>
+                            <div class="code-block">
+                                <pre><code># Descargar e instalar MuseScore 4
+# Windows: https://musescore.org/en/download
+# La aplicación configurará automáticamente las rutas</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Ejecutar la Aplicación</h4>
+                            <div class="code-block">
+                                <pre><code>python main.py</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-music"></i>
+                        <span>Music Analyzer</span>
+                    </div>
+                    <p>Herramienta avanzada para análisis musical computacional con soporte para KERN y MusicXML.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Proyecto</h4>
+                    <ul>
+                        <li><a href="#features">Características</a></li>
+                        <li><a href="#functionality">Funcionalidades</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#installation">Instalación</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Ejemplos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tecnologías</h4>
+                    <ul>
+                        <li>Python & Music21</li>
+                        <li>MongoDB Atlas</li>
+                        <li>Tkinter GUI</li>
+                        <li>MuseScore Integration</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Music Analyzer. Desarrollado para análisis musical académico y profesional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

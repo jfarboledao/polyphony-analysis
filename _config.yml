@@ -1,0 +1,47 @@
+title: "Analizador de Archivos Musicales"
+description: "Aplicación Python para análisis musical de archivos KERN y MusicXML con voice leading y conteo de intervalos"
+url: "https://usuario.github.io/music-analyzer"
+baseurl: ""
+
+# GitHub Pages settings
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# SEO settings
+author: "Music Analyzer Team"
+twitter:
+  username: music-analyzer
+facebook:
+  app_id: 
+logo: /assets/images/logo.png
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - archivosKern
+  - archivosMxml
+  - archivosCompuesto
+  - __pycache__
+  - "*.py"
+  - "*.pyc"
+
+# Include files
+include:
+  - _pages

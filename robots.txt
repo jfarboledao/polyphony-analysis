@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://usuario.github.io/music-analyzer/sitemap.xml
+
+# Disallow access to source code files
+Disallow: /*.py$
+Disallow: /__pycache__/
+Disallow: /archivosKern/
+Disallow: /archivosMxml/
+Disallow: /archivosCompuesto/
