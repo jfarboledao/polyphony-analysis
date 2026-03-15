@@ -1,6 +1,6 @@
 
 usuario = "admin"
-password = "admin123"
+password = "zoGhwqHGMwSzQlCI"
 
 from pymongo.mongo_client import MongoClient
 
